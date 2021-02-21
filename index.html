@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"></script>
+    <title>Rest Country API</title>
+</head>
+<body data-theme="default">
+    <div class="container">
+        <header class="header">
+            <h1 class="header__heading">Where in the world?</h1>
+            <div class="header__theme">
+                <input type="checkbox" id="theme-switch" name="theme-switch" value="default">
+                <label for="theme-switch">
+                    <span class="dark">
+                        <i class="far fa-sun"></i>
+                        Light Mode
+                    </span>
+                    <span class="light active">
+                        <i class="far fa-moon"></i>
+                        Dark Mode
+                    </span>
+                </label>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="view-option">
+                <div class="search__bar">
+                    <i class="fas fa-search search__icon"></i>
+                    <input type="text" id="search-text" class="search__input">
+                </div>
+                <div class="filter">
+                    <div for="select-region" class="filter__box">
+                        <span class="filter__label">Filter by Region</span>
+                        <i class="fas fa-chevron-down filter__icon"></i>
+                    </div>
+                    <div class="filter__show">
+                        <!-- <div class="filter__item" data-region="Africa">Africa</div>
+                        <div class="filter__item" data-region="Africa">Africa</div>
+                        <div class="filter__item" data-region="Africa">Africa</div>
+                        <div class="filter__item" data-region="Africa">Africa</div>
+                        <div class="filter__item" data-region="Africa">Africa</div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="loader"></div> 
+                <div class="country">
+                    <div class="country__item" data-name="USA">
+                        <div class="country__flag">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="">
+                        </div>
+                        <div class="country__information">
+                            <div class="country__name">United States of America</div>
+                            <div class="country__population"><span class="country__label">Population: </span>321,947,000</div>
+                            <div class="country__region"><span class="country__label">Region: </span>American</div>
+                            <div class="country__capital"><span class="country__label">Capital: </span>Washington, D.C.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

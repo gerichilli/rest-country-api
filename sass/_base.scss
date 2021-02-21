@@ -1,0 +1,50 @@
+// Variable:
+$font-family: "Nunito Sans", sans-serif;
+$main-font-size: 1.4rem;
+
+$sp-default: 10rem;
+$sp-medium: 8rem;
+$sp-small: 6rem;
+
+*:focus {
+  border: none;
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body[data-theme="default"] {
+  --background-color: hsl(0, 0%, 98%);
+  --text-color: hsl(200, 15%, 8%);
+  --shadow-color: hsla(0, 0%, 52%, 0.2);
+  --element-color: hsl(0, 0%, 100%);
+}
+
+body[data-theme="dark"] {
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: hsl(0, 0%, 100%);
+  --shadow-color: hsla(0, 0%, 52%, 0.1);
+  --element-color: hsl(209, 23%, 22%);
+}
+
+body {
+  font-family: $font-family;
+  font-size: $main-font-size;
+  font-weight: 300;
+  color: var(--text-color);
+  line-height: 1.5;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}

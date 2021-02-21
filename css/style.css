@@ -1,0 +1,189 @@
+*:focus {
+  border: none;
+  outline: none; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body[data-theme="default"] {
+  --background-color: hsl(0, 0%, 98%);
+  --text-color: hsl(200, 15%, 8%);
+  --shadow-color: hsla(0, 0%, 52%, 0.2);
+  --element-color: hsl(0, 0%, 100%); }
+
+body[data-theme="dark"] {
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: hsl(0, 0%, 100%);
+  --shadow-color: hsla(0, 0%, 52%, 0.1);
+  --element-color: hsl(209, 23%, 22%); }
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-color);
+  line-height: 1.5;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1); }
+
+.header {
+  height: 8.5rem;
+  width: 100%;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  box-shadow: 2px 2px 6px var(--shadow-color);
+  display: flex;
+  align-items: center; }
+  .header__heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-right: auto; }
+  .header__theme input {
+    display: none; }
+  .header__theme label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer; }
+    .header__theme label span {
+      display: none; }
+    .header__theme label .active {
+      display: inline-block; }
+
+.main {
+  margin: 6rem 10rem; }
+
+.view-option {
+  display: flex;
+  height: 6.5rem;
+  width: 100%;
+  justify-content: stretch; }
+
+.search__bar {
+  width: 64rem;
+  position: relative;
+  margin-right: auto; }
+
+.search__input {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--shadow-color);
+  box-shadow: 2px 2px 6px var(--shadow-color);
+  padding-left: 6rem;
+  background-color: var(--element-color);
+  font-size: 1.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--text-color); }
+
+.search__icon {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+  z-index: 100;
+  font-size: 2.2rem;
+  color: var(--shadow-color); }
+
+.filter {
+  position: relative;
+  min-width: 27rem;
+  font-size: 1.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--text-color); }
+  .filter__box, .filter__show {
+    width: 100%;
+    background-color: var(--element-color);
+    padding: 0 2.5rem;
+    border-radius: 10px; }
+  .filter__box {
+    display: block;
+    height: 100%;
+    border: 1px solid var(--shadow-color);
+    box-shadow: 2px 2px 6px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer; }
+  .filter__icon {
+    margin-left: auto;
+    transition: all 0.3s; }
+    .filter__icon--rotate {
+      transform: rotate(180deg); }
+  .filter__show {
+    position: absolute;
+    z-index: 100;
+    margin-top: 5px;
+    display: none; }
+    .filter__show--active {
+      display: block; }
+    .filter__show > * {
+      width: 100%;
+      padding-top: 1rem;
+      padding-bottom: 1rem; }
+  .filter__item {
+    cursor: pointer; }
+    .filter__item:hover {
+      color: #00a0aa; }
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60rem; }
+
+.loader {
+  display: none;
+  border: 5px solid var(--element-color);
+  border-radius: 50%;
+  border-top: 8px solid var(--text-color);
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 1s linear infinite;
+  /* Safari */
+  animation: spin 1s linear infinite; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.country {
+  width: 100%;
+  margin-top: 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 8rem; }
+  .country__item {
+    width: 100%;
+    background-color: var(--element-color);
+    border-radius: 10px;
+    border: 1px solid var(--shadow-color);
+    box-shadow: 2px 2px 6px var(--shadow-color);
+    min-height: 40rem;
+    overflow: hidden;
+    cursor: pointer; }
+  .country__flag {
+    overflow: hidden;
+    width: 100%;
+    height: 20rem; }
+    .country__flag img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .country__information {
+    padding: 3rem 2.8rem; }
+  .country__name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem; }
+  .country__label {
+    font-weight: 700; }
