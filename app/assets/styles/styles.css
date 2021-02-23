@@ -1,0 +1,10 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-color);
+  line-height: 1.5;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}

@@ -1,21 +1,14 @@
-const darkMode = document.querySelector('.header__theme--dark');
-const lightMode = document.querySelector('.header__theme--light');
-const themeSwitchBtn = document.getElementById('theme-switch');
+import '../styles/styles.css'
 
+const darkMode = document.querySelector('.dark');
+const lightMode = document.querySelector('.light');
+const themeSwitchBtn = document.getElementById('theme-switch');
 const filterBox = document.querySelector('.filter');
 const chervonDownIcon = document.querySelector('.filter__icon');
 const filterList = document.querySelector('.filter__show');
-const filterLabel = document.querySelector('.filter__label');
-
+const filterLabel = document.querySelector('.filter__label')
 const countryWrapper = document.querySelector('.country');
-const loader = document.querySelector('.loader');
 let filterRegion;
-
-let countryCount = 0;
-let totalCountryCount = 0;
-let ready = false;
-
-let apiUrl = 'https://restcountries.eu/rest/v2/all';
 
 // Work with data
 const region = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
@@ -40,8 +33,7 @@ function renderCountry(dataArr) {
             </div>
         </div>
         `
-    });
-    loader.hidden = true;
+    })
     countryWrapper.innerHTML = html;
 }
 
@@ -56,16 +48,13 @@ function renderFilter() {
 const getCountryData = function(url) {
     fetch(url).
     then(response => response.json()).
-    then(dataArr => {
-        renderCountry(dataArr);
-    })
-    
+    then(dataArr => renderCountry(dataArr))
 }
 
 // Render all region in filter 
 renderFilter();
 // Get all country data
-getCountryData(apiUrl);
+getCountryData('https://restcountries.eu/rest/v2/all');
 
 // Work with Event 
 let body = document.body;
@@ -74,12 +63,12 @@ body.setAttribute('data-theme', 'default');
 themeSwitchBtn.addEventListener('change', function(e){
     e.preventDefault();
     if (themeSwitchBtn.checked) {
-        darkMode.classList.add('header__theme--active');
-        lightMode.classList.remove('header__theme--active');
+        darkMode.classList.remove('active');
+        lightMode.classList.add('active');
         body.setAttribute('data-theme', 'dark')
     } else {
-        darkMode.classList.remove('header__theme--active');
-        lightMode.classList.add('header__theme--active');
+        darkMode.classList.add('active');
+        lightMode.classList.remove('active');
         body.setAttribute('data-theme', 'default')
     }
 });
@@ -92,13 +81,7 @@ filterBox.addEventListener('click', function(e){
     if(e.target.classList.contains('filter__item')) {
         filterLabel.innerHTML = e.target.innerHTML;
         filterRegion = e.target.innerHTML;
-        apiUrl = `https://restcountries.eu/rest/v2/region/${filterRegion}`;
-        getCountryData(apiUrl);
-    };  
-})
+    }
 
-window.addEventListener('scroll', function(){
-    // if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000){
-    //     getCountryData(apiUrl);
-    // }
+    getCountryData(`https://restcountries.eu/rest/v2/region/${filterRegion}`);
 })

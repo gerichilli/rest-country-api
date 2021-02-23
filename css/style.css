@@ -53,10 +53,10 @@ body {
     font-size: 1.6rem;
     font-weight: 700;
     cursor: pointer; }
-    .header__theme label span {
+    .header__theme label > span {
       display: none; }
-    .header__theme label .active {
-      display: inline-block; }
+  .header__theme--active {
+    display: inline-block !important; }
 
 .main {
   margin: 6rem 10rem; }
@@ -140,21 +140,15 @@ body {
   min-height: 60rem; }
 
 .loader {
-  display: none;
-  border: 5px solid var(--element-color);
-  border-radius: 50%;
-  border-top: 8px solid var(--text-color);
-  width: 80px;
-  height: 80px;
-  -webkit-animation: spin 1s linear infinite;
-  /* Safari */
-  animation: spin 1s linear infinite; }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem; }
+  .loader img {
+    width: 100%;
+    height: 100%; }
 
 .country {
   width: 100%;

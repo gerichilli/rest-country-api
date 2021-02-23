@@ -8,13 +8,22 @@
     "postcss-scss": "^3.0.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.3",
-    "postcss-cli": "^8.3.1"
+    "autoprefixer": "^10.2.4",
+    "css-loader": "^5.0.2",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.0",
+    "postcss-loader": "^5.0.0",
+    "postcss-nested": "^5.0.3",
+    "postcss-simple-vars": "^6.0.3",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0"
   },
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.comp.css -o css/style.css"
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.comp.css -o css/style.css",
+    "dev": "webpack"
   },
   "author": "",
   "license": "ISC"
